@@ -13,5 +13,5 @@ I'm very fortunate to be advised by [Prof. Qian Zheng](https://q-zh.github.io/) 
 
 I'd be very happy to exchange ideas and thoughts with anyone interested in this topic. I will regularly upodate my observations and thoughts related to this field on my blog post. Let's change the world with neuromorphic computing!
 
-[Email](mailto:1807317022@qq.com) / [Github](https://github.com/DarthMurse) / [WeChat](../images/wechat/jpg)
+[Email](mailto:1807317022@qq.com) / [Github](https://github.com/DarthMurse) / [WeChat](../images/wechat.jpg)
 
