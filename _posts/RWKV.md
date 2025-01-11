@@ -1,7 +1,7 @@
 ---
 title: RWKV
 date: 2025-01-10
-permalink: /posts/RWKV/
+permalink: /posts/2025/01/10/RWKV/
 tags: 
   - Linear Attention
 ---
