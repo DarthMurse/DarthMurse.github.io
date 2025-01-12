@@ -20,7 +20,7 @@ Here are some interesting numbers:
 
 The neuron can be simplified to an RC-circuit.
 
-![IF Model](images/IF_Model.png)
+![IF Model](https://darthmurse.github.io/images/IF_Model.png)
 
 We can acquire the dynamics of this circuit with the following deductions:
 
@@ -55,7 +55,7 @@ Tips:
 
     (d) Inhibitory Rebound
 
-![Spiking Patterns](images/spiking_pattern.png)
+![Spiking Patterns](https://darthmurse.github.io/images/spiking_pattern.png)
 
 (b) and (c) can be corrected by adding another linear filter in the model. 
 
