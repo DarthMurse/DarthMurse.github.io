@@ -32,7 +32,7 @@ The solution of the above differential equation with the initial condition $$u(0
 
 $$u(t) = u_{rest} + \frac{R}{\tau_m}\int_0^{\infty}\exp{(-\frac{s}{\tau_m})}I(t-s)ds.$$
 
-When the membrane potential $u(t)$ reaches a thredhold value $$\theta$$, it will fire a spike and the membrane potential will drop to the rest potential $u_r$. The firing time of the neuron is denoted by 
+When the membrane potential $$u(t)$$ reaches a thredhold value $$\theta$$, it will fire a spike and the membrane potential will drop to the rest potential $$u_r$$. The firing time of the neuron is denoted by 
 
 $$t^f: u(t^f) = \theta, \ \lim_{\delta \rightarrow 0^+} u(t^f + \delta) = u_r.$$
 
