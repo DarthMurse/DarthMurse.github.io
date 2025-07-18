@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Your Name</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- MathJax for LaTeX rendering -->
-    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog - Your Name</title>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<!-- MathJax for LaTeX rendering -->
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
         window.MathJax = {
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -20,119 +21,116 @@
     </script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Your Name</a>
-            </div>
-            <div class="nav-menu">
-                <a href="index.html#home" class="nav-link">Home</a>
-                <a href="index.html#publications" class="nav-link">Publications</a>
-                <a href="blog.html" class="nav-link active">Blog</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+<!-- Navigation -->
+<nav class="navbar">
+<div class="nav-container">
+<div class="nav-logo">
+<a href="index.html">Your Name</a>
+</div>
+<div class="nav-menu">
+<a class="nav-link" href="index.html#home">Home</a>
+<a class="nav-link" href="index.html#publications">Publications</a>
+<a class="nav-link active" href="blog.html">Blog</a>
+<a class="nav-link" href="index.html#contact">Contact</a>
+</div>
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</nav>
+<!-- Blog Header -->
+<section class="blog-header">
+<div class="container">
+<h1>My Blog</h1>
+<p>Thoughts, ideas, and insights from my journey</p>
+</div>
+</section>
+<!-- Blog Posts -->
+<section class="blog-posts">
+<div class="container">
+<div class="blog-grid"><article class="blog-card" onclick="location.href='blog/linear-attention/index.html'"><div class="blog-image"><img alt="'Linear Attention'" src="blog/linear-attention/featured.jpg"/></div><div class="blog-content"><div class="blog-meta"><span class="blog-date">2025-01-12</span><span class="blog-category">Linear Attention</span></div><h2 class="blog-title">'Linear Attention'</h2><p class="blog-excerpt"># Linear Attention
+在这篇文章中，我将总结几种Softmax Attention和几种Linear Attention的并行训练和递推推理的计算方式以及相应的复杂度。
 
-    <!-- Blog Header -->
-    <section class="blog-header">
-        <div class="container">
-            <h1>My Blog</h1>
-            <p>Thoughts, ideas, and insights from my journey</p>
-        </div>
-    </section>
-
-    <!-- Blog Posts -->
-    <section class="blog-posts">
-        <div class="container">
-            <div class="blog-grid">
-                <!-- Blog Post 1 -->
-                <article class="blog-card" onclick="location.href='blog/understanding-machine-learning/index.html'">
-                    <div class="blog-image">
-                        <img src="blog/understanding-machine-learning/featured.jpg" alt="Understanding Machine Learning">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">January 15, 2025</span>
-                            <span class="blog-category">Machine Learning</span>
-                        </div>
-                        <h2 class="blog-title">Understanding Machine Learning: A Beginner's Guide</h2>
-                        <p class="blog-excerpt">
+### Softmax Attention
+下文中均假设网络的输入为$[L, D]$，其中$L$为序列长度，$D$为表征向量的大小，$H$为Attention头数量（并行、减少计算量），$D_H$为每个Head的...</p></div></article>
+<!-- Blog Post 1 -->
+<article class="blog-card" onclick="location.href='blog/understanding-machine-learning/index.html'">
+<div class="blog-image">
+<img alt="Understanding Machine Learning" src="blog/understanding-machine-learning/featured.jpg"/>
+</div>
+<div class="blog-content">
+<div class="blog-meta">
+<span class="blog-date">January 15, 2025</span>
+<span class="blog-category">Machine Learning</span>
+</div>
+<h2 class="blog-title">Understanding Machine Learning: A Beginner's Guide</h2>
+<p class="blog-excerpt">
                             An introduction to the fundamental concepts of machine learning, covering supervised learning, 
                             unsupervised learning, and the mathematical foundations behind popular algorithms...
                         </p>
-                        <div class="blog-tags">
-                            <span class="tag">ML</span>
-                            <span class="tag">Tutorial</span>
-                            <span class="tag">Beginner</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 2 -->
-                <article class="blog-card" onclick="location.href='blog/deep-dive-neural-networks/index.html'">
-                    <div class="blog-image">
-                        <img src="blog/deep-dive-neural-networks/featured.jpg" alt="Deep Dive into Neural Networks">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">December 28, 2024</span>
-                            <span class="blog-category">Deep Learning</span>
-                        </div>
-                        <h2 class="blog-title">A Deep Dive into Neural Networks</h2>
-                        <p class="blog-excerpt">
+<div class="blog-tags">
+<span class="tag">ML</span>
+<span class="tag">Tutorial</span>
+<span class="tag">Beginner</span>
+</div>
+</div>
+</article>
+<!-- Blog Post 2 -->
+<article class="blog-card" onclick="location.href='blog/deep-dive-neural-networks/index.html'">
+<div class="blog-image">
+<img alt="Deep Dive into Neural Networks" src="blog/deep-dive-neural-networks/featured.jpg"/>
+</div>
+<div class="blog-content">
+<div class="blog-meta">
+<span class="blog-date">December 28, 2024</span>
+<span class="blog-category">Deep Learning</span>
+</div>
+<h2 class="blog-title">A Deep Dive into Neural Networks</h2>
+<p class="blog-excerpt">
                             Exploring the architecture and mathematics behind neural networks, from perceptrons to 
                             deep learning models. We'll cover backpropagation, activation functions, and optimization techniques...
                         </p>
-                        <div class="blog-tags">
-                            <span class="tag">Neural Networks</span>
-                            <span class="tag">Deep Learning</span>
-                            <span class="tag">Mathematics</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 3 -->
-                <article class="blog-card" onclick="location.href='blog/research-methodology/index.html'">
-                    <div class="blog-image">
-                        <img src="blog/research-methodology/featured.jpg" alt="Research Methodology">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">November 10, 2024</span>
-                            <span class="blog-category">Research</span>
-                        </div>
-                        <h2 class="blog-title">Effective Research Methodology in Computer Science</h2>
-                        <p class="blog-excerpt">
+<div class="blog-tags">
+<span class="tag">Neural Networks</span>
+<span class="tag">Deep Learning</span>
+<span class="tag">Mathematics</span>
+</div>
+</div>
+</article>
+<!-- Blog Post 3 -->
+<article class="blog-card" onclick="location.href='blog/research-methodology/index.html'">
+<div class="blog-image">
+<img alt="Research Methodology" src="blog/research-methodology/featured.jpg"/>
+</div>
+<div class="blog-content">
+<div class="blog-meta">
+<span class="blog-date">November 10, 2024</span>
+<span class="blog-category">Research</span>
+</div>
+<h2 class="blog-title">Effective Research Methodology in Computer Science</h2>
+<p class="blog-excerpt">
                             A comprehensive guide to conducting effective research in computer science, covering 
                             literature review, hypothesis formation, experimental design, and paper writing...
                         </p>
-                        <div class="blog-tags">
-                            <span class="tag">Research</span>
-                            <span class="tag">Methodology</span>
-                            <span class="tag">Academic</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Add more blog posts as needed -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
+<div class="blog-tags">
+<span class="tag">Research</span>
+<span class="tag">Methodology</span>
+<span class="tag">Academic</span>
+</div>
+</div>
+</article>
+<!-- Add more blog posts as needed -->
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<p>© 2025 Your Name. All rights reserved.</p>
+</div>
+</footer>
+<script src="js/script.js"></script>
 </body>
 </html>
