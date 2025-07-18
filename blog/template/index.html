@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title - Your Name</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../../index.html">Your Name</a>
+            </div>
+            <div class="nav-menu">
+                <a href="../../index.html#home" class="nav-link">Home</a>
+                <a href="../../index.html#publications" class="nav-link">Publications</a>
+                <a href="../../blog.html" class="nav-link">Blog</a>
+                <a href="../../index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <article class="blog-post">
+        <div class="container">
+            <div class="blog-post-header">
+                <h1 class="blog-post-title">Blog Post Title</h1>
+                <div class="blog-post-meta">
+                    <span>Date</span> • <span>Category</span> • <span>Read Time</span>
+                </div>
+            </div>
+            
+            <div class="blog-post-content">
+                <img src="featured.jpg" alt="Featured Image Description" />
+                
+                <p>Introduction paragraph. Provide an overview of what the post is about.</p>
+
+                <h2>First Main Heading</h2>
+                
+                <p>Content for the first section.</p>
+
+                <!-- Example of inserting an image -->
+                <img src="image-name.jpg" alt="Image Description" />
+                
+                <!-- Example of a list -->
+                <ul>
+                    <li>List item one</li>
+                    <li>List item two</li>
+                    <li>List item three</li>
+                </ul>
+
+                <h2>Second Main Heading</h2>
+                
+                <p>Content for the second section.</p>
+
+                <!-- Example of LaTeX formula -->
+                <p>You can include inline math like $E=mc^2$ or display equations:</p>
+                
+                $$\int_{a}^{b} f(x) \, dx = F(b) - F(a)$$
+
+                <h3>Subheading</h3>
+                
+                <p>More detailed content.</p>
+
+                <!-- Example of code block -->
+                <pre><code>def hello_world():
+    print("Hello, World!")
+    
+hello_world()
+</code></pre>
+
+                <h2>Conclusion</h2>
+
+                <p>Summarize the key points of your blog post.</p>
+
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                    <p><strong>Related Posts:</strong> You can link to other related blog posts here.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

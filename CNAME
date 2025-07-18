@@ -1,0 +1,9 @@
+# Custom Domain Configuration
+
+To use a custom domain with GitHub Pages:
+
+1. Purchase your domain name from a domain registrar (e.g., Google Domains, Namecheap, GoDaddy)
+2. Uncomment the line below and replace with your domain name
+3. Configure your DNS settings according to GitHub Pages documentation
+
+# example.com

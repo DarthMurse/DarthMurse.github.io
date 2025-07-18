@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Deep Dive into Neural Networks - Your Name</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../../index.html">Your Name</a>
+            </div>
+            <div class="nav-menu">
+                <a href="../../index.html#home" class="nav-link">Home</a>
+                <a href="../../index.html#publications" class="nav-link">Publications</a>
+                <a href="../../blog.html" class="nav-link">Blog</a>
+                <a href="../../index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <article class="blog-post">
+        <div class="container">
+            <div class="blog-post-header">
+                <h1 class="blog-post-title">A Deep Dive into Neural Networks</h1>
+                <div class="blog-post-meta">
+                    <span>December 28, 2024</span> • <span>Deep Learning</span> • <span>20 min read</span>
+                </div>
+            </div>
+            
+            <div class="blog-post-content">
+                <img src="featured.jpg" alt="Neural Network Visualization" />
+                
+                <p>Neural networks have revolutionized artificial intelligence, enabling computers to recognize images, understand speech, and even generate human-like text. In this comprehensive guide, we'll explore the mathematical foundations, architectural principles, and training algorithms that make neural networks so powerful.</p>
+
+                <h2>The Biological Inspiration</h2>
+                
+                <p>Neural networks are loosely inspired by the human brain, which contains approximately 86 billion neurons connected by trillions of synapses. Each biological neuron receives signals from other neurons, processes this information, and decides whether to fire a signal to connected neurons.</p>
+
+                <p>While artificial neural networks are much simpler than their biological counterparts, they capture the essential idea: simple processing units (artificial neurons) can work together to solve complex problems.</p>
+
+                <h2>The Perceptron: Building Block of Neural Networks</h2>
+
+                <p>The journey of neural networks begins with the perceptron, invented by Frank Rosenblatt in 1957. A perceptron is the simplest form of an artificial neuron.</p>
+
+                <img src="perceptron.png" alt="Perceptron Architecture" />
+
+                <h3>Mathematical Foundation</h3>
+
+                <p>A perceptron computes a weighted sum of its inputs and applies an activation function. Mathematically:</p>
+
+                $$y = f\left(\sum_{i=1}^{n} w_i x_i + b\right)$$
+
+                <p>Where:</p>
+                <ul>
+                    <li>$x_i$ are the input features</li>
+                    <li>$w_i$ are the weights</li>
+                    <li>$b$ is the bias term</li>
+                    <li>$f$ is the activation function</li>
+                </ul>
+
+                <p>The activation function introduces non-linearity. Common choices include:</p>
+
+                <h3>Step Function (Original Perceptron)</h3>
+                $$f(z) = \begin{cases} 
+                1 & \text{if } z \geq 0 \\
+                0 & \text{if } z < 0 
+                \end{cases}$$
+
+                <h3>Sigmoid Function</h3>
+                $$f(z) = \frac{1}{1 + e^{-z}}$$
+
+                <h3>ReLU (Rectified Linear Unit)</h3>
+                $$f(z) = \max(0, z)$$
+
+                <h2>Multi-Layer Perceptrons (MLPs)</h2>
+
+                <p>While a single perceptron can only solve linearly separable problems, combining multiple perceptrons in layers creates a powerful universal function approximator.</p>
+
+                <img src="mlp-architecture.png" alt="Multi-Layer Perceptron" />
+
+                <h3>Forward Propagation</h3>
+
+                <p>In a multi-layer network, information flows forward through the layers. For a network with one hidden layer:</p>
+
+                $$\mathbf{h} = f_1(\mathbf{W_1}\mathbf{x} + \mathbf{b_1})$$
+                $$\mathbf{y} = f_2(\mathbf{W_2}\mathbf{h} + \mathbf{b_2})$$
+
+                <p>Where:</p>
+                <ul>
+                    <li>$\mathbf{x}$ is the input vector</li>
+                    <li>$\mathbf{h}$ is the hidden layer activation</li>
+                    <li>$\mathbf{y}$ is the output</li>
+                    <li>$\mathbf{W_1}, \mathbf{W_2}$ are weight matrices</li>
+                    <li>$\mathbf{b_1}, \mathbf{b_2}$ are bias vectors</li>
+                </ul>
+
+                <h2>Backpropagation: The Learning Algorithm</h2>
+
+                <p>Backpropagation, developed in the 1980s, is the algorithm that makes training deep neural networks possible. It efficiently computes gradients by applying the chain rule of calculus.</p>
+
+                <h3>The Loss Function</h3>
+
+                <p>Training begins with defining a loss function that measures how wrong our predictions are. For regression problems, we might use Mean Squared Error:</p>
+
+                $$L = \frac{1}{2}(y_{true} - y_{pred})^2$$
+
+                <p>For classification, we often use Cross-Entropy Loss:</p>
+
+                $$L = -\sum_{i} y_{true,i} \log(y_{pred,i})$$
+
+                <h3>Computing Gradients</h3>
+
+                <p>Backpropagation computes the gradient of the loss with respect to each weight by working backwards through the network. For the output layer:</p>
+
+                $$\frac{\partial L}{\partial W_2} = \frac{\partial L}{\partial y} \frac{\partial y}{\partial W_2}$$
+
+                <p>For hidden layers, we use the chain rule:</p>
+
+                $$\frac{\partial L}{\partial W_1} = \frac{\partial L}{\partial y} \frac{\partial y}{\partial h} \frac{\partial h}{\partial W_1}$$
+
+                <img src="backpropagation.png" alt="Backpropagation Process" />
+
+                <h3>Gradient Descent</h3>
+
+                <p>Once we have the gradients, we update the weights using gradient descent:</p>
+
+                $$W_{new} = W_{old} - \alpha \frac{\partial L}{\partial W}$$
+
+                <p>Where $\alpha$ is the learning rate, a crucial hyperparameter that controls how big steps we take.</p>
+
+                <h2>Deep Neural Networks</h2>
+
+                <p>Deep networks have multiple hidden layers, allowing them to learn hierarchical representations. Each layer learns increasingly abstract features:</p>
+
+                <ul>
+                    <li><strong>First layers:</strong> Simple features (edges, shapes)</li>
+                    <li><strong>Middle layers:</strong> Complex patterns (textures, parts)</li>
+                    <li><strong>Deep layers:</strong> High-level concepts (objects, faces)</li>
+                </ul>
+
+                <h3>The Vanishing Gradient Problem</h3>
+
+                <p>As networks get deeper, gradients can become exponentially small, making training difficult. This happens because:</p>
+
+                $$\frac{\partial L}{\partial W_1} = \frac{\partial L}{\partial y} \prod_{i=2}^{n} \frac{\partial h_i}{\partial h_{i-1}} \frac{\partial h_1}{\partial W_1}$$
+
+                <p>The product of many small derivatives can approach zero.</p>
+
+                <h3>Solutions to Vanishing Gradients</h3>
+
+                <h4>1. Better Activation Functions</h4>
+                <p>ReLU and its variants help maintain gradient flow:</p>
+                <ul>
+                    <li><strong>ReLU:</strong> $f(x) = \max(0, x)$</li>
+                    <li><strong>Leaky ReLU:</strong> $f(x) = \max(0.01x, x)$</li>
+                    <li><strong>ELU:</strong> $f(x) = \begin{cases} x & \text{if } x > 0 \\ \alpha(e^x - 1) & \text{if } x \leq 0 \end{cases}$</li>
+                </ul>
+
+                <h4>2. Batch Normalization</h4>
+                <p>Normalizes inputs to each layer, reducing internal covariate shift:</p>
+                $$\hat{x} = \frac{x - \mu}{\sqrt{\sigma^2 + \epsilon}}$$
+
+                <h4>3. Residual Connections</h4>
+                <p>Skip connections allow gradients to flow directly to earlier layers:</p>
+                $$h_{l+1} = f(h_l) + h_l$$
+
+                <img src="residual-connection.png" alt="Residual Connection" />
+
+                <h2>Advanced Architectures</h2>
+
+                <h3>Convolutional Neural Networks (CNNs)</h3>
+
+                <p>CNNs use convolution operations to process grid-like data such as images. A convolution applies a filter across the input:</p>
+
+                $$(f * g)(x, y) = \sum_{i}\sum_{j} f(i, j) \cdot g(x-i, y-j)$$
+
+                <img src="cnn-architecture.png" alt="CNN Architecture" />
+
+                <h3>Recurrent Neural Networks (RNNs)</h3>
+
+                <p>RNNs process sequential data by maintaining hidden state:</p>
+
+                $$h_t = f(W_h h_{t-1} + W_x x_t + b)$$
+
+                <p>Long Short-Term Memory (LSTM) networks solve the vanishing gradient problem in RNNs through gating mechanisms.</p>
+
+                <h3>Attention Mechanisms</h3>
+
+                <p>Attention allows models to focus on relevant parts of the input. The attention weight is computed as:</p>
+
+                $$\alpha_i = \frac{\exp(e_i)}{\sum_{j=1}^{n} \exp(e_j)}$$
+
+                <p>Where $e_i$ is a compatibility score between query and key vectors.</p>
+
+                <h2>Training Techniques and Optimization</h2>
+
+                <h3>Advanced Optimizers</h3>
+
+                <h4>Momentum</h4>
+                <p>Helps accelerate gradients in the right direction:</p>
+                $$v_t = \gamma v_{t-1} + \alpha \nabla_W L$$
+                $$W_t = W_{t-1} - v_t$$
+
+                <h4>Adam (Adaptive Moment Estimation)</h4>
+                <p>Combines momentum with adaptive learning rates:</p>
+                $$m_t = \beta_1 m_{t-1} + (1-\beta_1)\nabla_W L$$
+                $$v_t = \beta_2 v_{t-1} + (1-\beta_2)(\nabla_W L)^2$$
+
+                <h3>Regularization Techniques</h3>
+
+                <h4>Dropout</h4>
+                <p>Randomly sets neurons to zero during training, preventing overfitting.</p>
+
+                <h4>L2 Regularization</h4>
+                <p>Adds penalty term to loss function:</p>
+                $$L_{total} = L_{original} + \lambda \sum_i W_i^2$$
+
+                <h2>Practical Implementation Tips</h2>
+
+                <h3>Weight Initialization</h3>
+                <p>Proper initialization is crucial. Xavier/Glorot initialization:</p>
+                $$W \sim \mathcal{N}\left(0, \frac{1}{\text{fan}_{\text{in}}}\right)$$
+
+                <h3>Learning Rate Scheduling</h3>
+                <p>Gradually reduce learning rate during training:</p>
+                <ul>
+                    <li><strong>Step decay:</strong> Reduce by factor every few epochs</li>
+                    <li><strong>Exponential decay:</strong> $\alpha_t = \alpha_0 e^{-kt}$</li>
+                    <li><strong>Cosine annealing:</strong> Follow cosine curve</li>
+                </ul>
+
+                <h3>Hyperparameter Tuning</h3>
+                <p>Key hyperparameters to tune:</p>
+                <ul>
+                    <li>Learning rate</li>
+                    <li>Batch size</li>
+                    <li>Network architecture (layers, neurons)</li>
+                    <li>Regularization strength</li>
+                    <li>Activation functions</li>
+                </ul>
+
+                <h2>Modern Developments</h2>
+
+                <h3>Transformer Architecture</h3>
+                <p>Transformers, introduced in "Attention Is All You Need," rely entirely on attention mechanisms and have revolutionized NLP.</p>
+
+                <h3>Vision Transformers (ViTs)</h3>
+                <p>Apply transformer architecture to computer vision by treating image patches as sequences.</p>
+
+                <h3>Self-Supervised Learning</h3>
+                <p>Learn representations from unlabeled data through pretext tasks.</p>
+
+                <h2>Code Example: Simple Neural Network</h2>
+
+                <pre><code>import numpy as np
+
+class NeuralNetwork:
+    def __init__(self, input_size, hidden_size, output_size):
+        # Initialize weights
+        self.W1 = np.random.randn(input_size, hidden_size) * 0.01
+        self.b1 = np.zeros((1, hidden_size))
+        self.W2 = np.random.randn(hidden_size, output_size) * 0.01
+        self.b2 = np.zeros((1, output_size))
+    
+    def sigmoid(self, x):
+        return 1 / (1 + np.exp(-np.clip(x, -250, 250)))
+    
+    def forward(self, X):
+        self.z1 = np.dot(X, self.W1) + self.b1
+        self.a1 = self.sigmoid(self.z1)
+        self.z2 = np.dot(self.a1, self.W2) + self.b2
+        self.a2 = self.sigmoid(self.z2)
+        return self.a2
+    
+    def backward(self, X, y, output):
+        m = X.shape[0]
+        
+        # Output layer gradients
+        dz2 = output - y
+        dW2 = (1/m) * np.dot(self.a1.T, dz2)
+        db2 = (1/m) * np.sum(dz2, axis=0, keepdims=True)
+        
+        # Hidden layer gradients
+        dz1 = np.dot(dz2, self.W2.T) * self.a1 * (1 - self.a1)
+        dW1 = (1/m) * np.dot(X.T, dz1)
+        db1 = (1/m) * np.sum(dz1, axis=0, keepdims=True)
+        
+        return dW1, db1, dW2, db2
+    
+    def train(self, X, y, epochs, learning_rate):
+        for i in range(epochs):
+            # Forward propagation
+            output = self.forward(X)
+            
+            # Backward propagation
+            dW1, db1, dW2, db2 = self.backward(X, y, output)
+            
+            # Update weights
+            self.W1 -= learning_rate * dW1
+            self.b1 -= learning_rate * db1
+            self.W2 -= learning_rate * dW2
+            self.b2 -= learning_rate * db2
+            
+            if i % 100 == 0:
+                loss = np.mean((output - y) ** 2)
+                print(f"Epoch {i}, Loss: {loss:.4f}")
+</code></pre>
+
+                <h2>Conclusion</h2>
+
+                <p>Neural networks have evolved from simple perceptrons to sophisticated architectures capable of solving complex real-world problems. Understanding the mathematical foundations—from forward propagation to backpropagation, from activation functions to optimization algorithms—is crucial for both using existing models effectively and developing new architectures.</p>
+
+                <p>The field continues to evolve rapidly, with new architectures, training techniques, and applications emerging regularly. The key to staying current is to understand these fundamental principles, which provide the foundation for understanding more advanced concepts.</p>
+
+                <p>Whether you're working on computer vision, natural language processing, or any other AI application, a solid understanding of neural networks will serve you well in your journey through the exciting world of artificial intelligence.</p>
+
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                    <p><strong>Next Up:</strong> In our upcoming post, we'll explore how to apply these neural network principles to real-world projects and discuss best practices for deployment and monitoring.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

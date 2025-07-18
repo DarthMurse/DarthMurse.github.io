@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Your Name</a>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="images/profile.jpg" alt="Your Profile Photo" class="profile-photo">
+                </div>
+                <div class="hero-text">
+                    <h1>Hello, I'm <span class="highlight">Your Name</span></h1>
+                    <p class="hero-subtitle">Researcher • Developer • Writer</p>
+                    <p class="hero-description">
+                        I am a passionate researcher and developer interested in [your field of study/work]. 
+                        My work focuses on [brief description of your research interests or professional focus]. 
+                        I enjoy exploring new technologies and sharing knowledge through writing and open-source contributions.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://github.com/yourusername" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link wechat-link" onclick="showWeChatQR()">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="publications-grid">
+                <!-- Publication 1 -->
+                <div class="publication-card">
+                    <div class="publication-content">
+                        <h3 class="publication-title">Your First Publication Title</h3>
+                        <p class="publication-authors">Author 1, <strong>Your Name</strong>, Author 3</p>
+                        <p class="publication-venue">Conference/Journal Name, Year</p>
+                        <p class="publication-description">
+                            Brief description of the publication and its key contributions...
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </a>
+                            <a href="#" class="pub-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="pub-link">
+                                <i class="fas fa-external-link-alt"></i> DOI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="publication-card">
+                    <div class="publication-content">
+                        <h3 class="publication-title">Your Second Publication Title</h3>
+                        <p class="publication-authors"><strong>Your Name</strong>, Author 2, Author 3</p>
+                        <p class="publication-venue">Conference/Journal Name, Year</p>
+                        <p class="publication-description">
+                            Brief description of the publication and its key contributions...
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </a>
+                            <a href="#" class="pub-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="pub-link">
+                                <i class="fas fa-external-link-alt"></i> DOI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more publications as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-description">
+                Feel free to reach out if you'd like to collaborate or just want to say hello!
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>your.email@example.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Your Location</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WeChat QR Modal -->
+    <div id="wechatModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>WeChat QR Code</h3>
+            <img src="images/wechat-qr.png" alt="WeChat QR Code" class="qr-code">
+            <p>Scan to add me on WeChat</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,51 +1,111 @@
-# Academic Pages
+# Personal Website
 
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
+This is a personal website template designed to be hosted on GitHub Pages. It features a clean, responsive design with a main page for your profile and a blog section that supports Markdown and LaTeX rendering.
 
-Academic Pages is a Github Pages template for academic websites.
+## Structure
 
-# Getting Started
+```
+DarthMurse.github.io/
+├── index.html              # Main page with personal information
+├── blog.html               # Blog listing page
+├── css/
+│   └── style.css           # Main stylesheet
+├── js/
+│   └── script.js           # JavaScript functionality
+├── images/
+│   ├── profile.jpg         # Your profile photo
+│   └── wechat-qr.png       # Your WeChat QR code
+└── blog/
+    ├── blog-post-name/     # Each blog post has its own folder
+    │   ├── index.html      # The blog post HTML
+    │   ├── featured.jpg    # Featured image for the blog post
+    │   └── other-images/   # Other resources for the blog post
+    └── another-blog-post/
+        └── ...
+```
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+## Features
 
-See more info at https://academicpages.github.io/
+- Responsive design that works on mobile, tablet, and desktop
+- Dark/light mode toggle
+- Clean and modern UI with subtle animations
+- Blog system with Markdown and LaTeX support via MathJax
+- Social media integration (GitHub and WeChat)
+- Publications section with links to papers, code, and DOIs
+- Contact information section
 
-## Running Locally
+## Customization
 
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+### Personal Information
 
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+Edit `index.html` to update:
+- Your name (replace "Your Name" throughout the file)
+- Your profile description
+- Your publications list
+- Your contact information
+- Social media links
 
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
+### Profile Photo
 
-# Maintenance
+1. Replace `/images/profile.jpg` with your own photo
+2. Recommended size: 300x300 pixels, square format
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+### WeChat QR Code
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
+1. Replace `/images/wechat-qr.png` with your WeChat QR code
+2. Ensure it's clear and scannable
 
-## Bugfixes and enhancements
+### Adding Blog Posts
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
+1. Create a new folder in the `/blog/` directory with your post name (use hyphens for spaces)
+2. Copy the structure from an existing blog post folder
+3. Update the content in `index.html`
+4. Add your featured image and any other resources
+5. Update `blog.html` to include your new blog post in the listing
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+### Colors and Styling
+
+Edit `css/style.css` to change:
+- Primary color: `--primary-color: #2563eb;` (blue)
+- Secondary color: `--secondary-color: #64748b;` (gray)
+- Accent color: `--accent-color: #f59e0b;` (amber)
+- Background colors, text colors, etc.
+
+## Deployment on GitHub Pages
+
+1. Ensure your repository is named `username.github.io` (where `username` is your GitHub username)
+2. Push your changes to the `master` branch (or `main` branch, depending on your GitHub settings)
+3. Go to Settings > Pages in your GitHub repository
+4. Select "Deploy from a branch" as the source
+5. Choose `master` (or `main`) branch and save
+6. Your site will be published at `https://username.github.io/`
+
+## Adding a Custom Domain (Optional)
+
+1. Purchase a domain name from a domain registrar
+2. Add a file named `CNAME` to your repository root with your domain name
+3. Configure DNS settings with your domain registrar as per GitHub's instructions
+4. In your repository, go to Settings > Pages > Custom domain and add your domain name
+5. Check "Enforce HTTPS" for secure connections
+
+## Local Development
+
+To test locally before deploying:
+
+1. Clone this repository
+2. Open `index.html` in a web browser or use a local server
+   - Python simple server: `python -m http.server`
+   - Node.js: `npx serve`
+3. Make your changes and test
+4. Commit and push to deploy
+
+## Credits
+
+- Fonts: Inter from Google Fonts
+- Icons: Font Awesome 6
+- Math rendering: MathJax
+- Code highlighting: highlight.js
+
+## License
+
+MIT License
